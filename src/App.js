@@ -1,7 +1,6 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FlagshipCards from "./components/FlagshipCards"
 import IllustrationCards from "./components/IllustrationCards"

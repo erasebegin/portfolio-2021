@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   heading: {
     color: "white",
-    marginBottom: "1em"
+    marginBottom: "1em",
   },
   appBar: {
     background: "#F1FFFA",
@@ -20,12 +20,12 @@ export const useStyles = makeStyles((theme) => ({
   flagshipGrid: {
     background: "#00296b",
     padding: "2em",
-    marginBottom: "3em"
+    marginBottom: "3em",
   },
   illustrationGrid: {
     background: "#fdc500",
     padding: "2em",
-    marginTop: "3em"
+    marginTop: "3em",
   },
   card: {
     height: "100%",
@@ -34,12 +34,27 @@ export const useStyles = makeStyles((theme) => ({
   },
   cardMedia: {
     paddingTop: "56.25%", // 16:9
+    cursor: "pointer",
   },
   cardContent: {
     flexGrow: 1,
   },
+  link: {
+    textDecoration: "none",
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
+  },
+  footerIcons: {
+    fontSize: "2rem",
+    color: "#00296b",
+    marginLeft: ".5em"
+  },
+  footerText: {
+    display: "flex",
+    alignItems: "center",
+    gap: ".5em",
+    justifyContent: "center",
   },
 }));

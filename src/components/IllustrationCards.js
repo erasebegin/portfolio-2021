@@ -10,30 +10,33 @@ import CardContent from "@material-ui/core/CardContent";
 
 import { useStyles } from "../useStyles";
 
+import crux from "../media/crux.png";
+import christmas from "../media/christmas.png";
+import boris from "../media/boris.png";
+
 export default function IllustrationCards() {
   const classes = useStyles();
 
   const cards = [
     {
       title: "Crux",
-      body: "Ecommerce platform for artist Soulstamina",
-      url: "https://www.soulstamina.shop",
-      repo: "https://github.com/erasebegin/soulstamina-shop",
-      image: "",
+      body: "Illustrations for a tutorial for Juxt's bitemporal database-- Crux",
+      url: "https://www.thinkdrops.art/blog/crux-tutorial/",
+      image: crux,
     },
     {
-      title: "Otherworld",
+      title: "Penguin School Projects",
       body:
-        "Blog, portfolio and e-commerce platform for artist Otherworld Comics",
-      url: "https://www.otherworld.com",
-      repo: "",
+        "Earliest projects whilst studying at the Penguin Illustration School",
+      url: "https://www.thinkdrops.art/blog/alien-sushi",
+      image: christmas,
     },
     {
-      title: "Comment Generator",
+      title: "Boris",
       body:
-        "What started out as a very basic tool for storing and copying student comments has developed in to a fully-fledged web app",
-      url: "",
-      repo: "",
+        "Cover artwork for Lisna track",
+      url: "https://www.thinkdrops.art/blog/boris",
+      image: boris,
     },
   ];
 
@@ -56,11 +59,18 @@ export default function IllustrationCards() {
         {cards.map((card) => (
           <Grid item key={card} xs={12} sm={6} md={4}>
             <Card className={classes.card}>
-              <CardMedia
-                className={classes.cardMedia}
-                image="https://source.unsplash.com/random"
-                title={card.title}
-              />
+              <a
+                href={card.url}
+                rel="noopener noferrer"
+                target="_blank"
+                className={classes.link}
+              >
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={card.image}
+                  title={card.title}
+                />
+              </a>
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
                   {card.title}
@@ -68,23 +78,27 @@ export default function IllustrationCards() {
                 <Typography>{card.body}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" color="primary">
-                  View
-                </Button>
-                <Button size="small" color="primary">
-                  Edit
-                </Button>
+                <a
+                  href={card.url}
+                  rel="noopener noferrer"
+                  target="_blank"
+                  className={classes.link}
+                >
+                  <Button size="small" color="primary">
+                    View
+                  </Button>
+                </a>
               </CardActions>
             </Card>
           </Grid>
         ))}
       </Grid>
-      <Container style={{ display: "flex", marginTop: "2em"}}>
+      <Container style={{ display: "flex", marginTop: "2em" }}>
         <a
           href="https://www.thinkdrops.art"
           rel="noopener noreferrer"
           target="_blank"
-          style={{margin:"auto", alignSelf:"center", justifySelf: "center"}}
+          style={{ margin: "auto", alignSelf: "center", justifySelf: "center" }}
         >
           <Button variant="contained" color="primary">
             More 🎨

@@ -11,7 +11,11 @@ import {
 } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
+import useWidth from "./hooks/UseWidth";
+
 export default function Contact() {
+  const isMobile = useWidth();
+
   const inputProps = {
     rowsMin: 4,
   };
@@ -24,7 +28,7 @@ export default function Contact() {
       display: "flex",
       alignItems: "center",
       flexDirection: "column",
-      maxWidth: "60vw",
+      maxWidth: isMobile ? "90vw" : "60vw",
       minWidth: "30vw",
       margin: "auto",
       marginTop: "20vh",
@@ -32,13 +36,13 @@ export default function Contact() {
       background: "#fdc500",
     },
     field: {
-      width: "400px",
+      width: isMobile ? 250 : 400,
       marginBottom: "2em",
     },
     area: {
       minHeight: "15vh",
-      maxHeight: "300px",
-      width: "400px",
+      maxHeight: 300,
+      width: isMobile ? 250 : 400,
       marginBottom: "2em",
       background: "#FFFBEB",
     },
@@ -50,14 +54,18 @@ export default function Contact() {
       position: "absolute",
       top: 0,
       left: 0,
-      margin: "2em 2em"
-    }
+      margin: "2em 2em",
+    },
   };
 
   return (
     <>
       <Link to="/">
-        <Button color="primary" style={{...styles.button, ...styles.backButton}} variant="contained">
+        <Button
+          color="primary"
+          style={{ ...styles.button, ...styles.backButton }}
+          variant="contained"
+        >
           <ArrowBackIcon />
           Back
         </Button>
