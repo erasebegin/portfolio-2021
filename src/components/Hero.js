@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -11,9 +11,22 @@ import useWidth from "../hooks/UseWidth";
 import mandala from "../media/mandala.png";
 import mandalaHalf from "../media/mandala-half.png";
 import headshot from "../media/headshot.jpg";
+import techStack from "../media/tech-stack.png";
+
+import ImageModal from "./ImageModal";
 
 export default function Hero() {
   const isMobile = useWidth();
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const current = {
+    descFull: [],
+    image: techStack,
+  };
+
+  const openModal = () => {
+    setModalOpen(!modalOpen);
+  };
 
   const useStyles = makeStyles((theme) => ({
     heroContent: {
@@ -27,7 +40,8 @@ export default function Hero() {
       justifyContent: "center",
     },
     heroButtons: {
-      marginTop: theme.spacing(4),
+      marginBottom: 10,
+      textDecoration: "none",
     },
     mandala1: {
       position: "absolute",
@@ -35,7 +49,7 @@ export default function Hero() {
       top: 0,
       right: 0,
       transform: "translate(0, -50%)",
-      overflow: "hidden"
+      overflow: "hidden",
     },
     mandala2: {
       position: "absolute",
@@ -56,6 +70,11 @@ export default function Hero() {
 
   return (
     <div className={classes.heroContent}>
+      <ImageModal
+        isOpen={modalOpen}
+        current={current}
+        closeModal={() => setModalOpen(false)}
+      />
       <img src={mandalaHalf} className={classes.mandala1} />
       <img src={mandala} className={classes.mandala2} />
       <Container maxWidth="sm" className={classes.innerContainer}>
@@ -87,20 +106,25 @@ export default function Hero() {
           A collection of some of my favourite projects created over the last 2
           years using various javascript frameworks.
         </Typography>
-        <div className={classes.heroButtons}>
-          <Grid container spacing={2} justify="center">
+        <div className={classes.heroButtonContainer}>
+          <Grid container spacing={4} justify="center" align="center">
             <Grid item>
-              <Link to="/contact">
-                <Button variant="contained" color="primary">
-                  Say hi 👋
-                </Button>
-              </Link>
+              <Button
+                variant="contained"
+                color="secondary"
+                className={classes.heroButtons}
+                onClick={openModal}
+              >
+                My skills 🐱‍👤
+              </Button>
+              <Grid item>
+                <Link className={classes.heroButtons} to="/contact">
+                  <Button variant="contained" color="primary">
+                    Say hi 👋
+                  </Button>
+                </Link>
+              </Grid>
             </Grid>
-            {/* <Grid item>
-                <Button variant="outlined" color="primary">
-                  Secondary action
-                </Button>
-              </Grid> */}
           </Grid>
         </div>
       </Container>
