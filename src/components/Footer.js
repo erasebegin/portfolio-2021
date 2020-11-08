@@ -10,9 +10,11 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import { GrReactjs } from "react-icons/gr";
 
 import { useStyles } from "../useStyles";
+import useWidth from "../hooks/UseWidth";
 
 export default function Footer() {
   const classes = useStyles();
+  const isMobile = useWidth();
 
   return (
     <footer className={classes.footer}>
@@ -49,15 +51,23 @@ export default function Footer() {
         <Link to="/contact">
           <MailIcon className={classes.footerIcons} />
         </Link>
-        <div className={classes.footerText}>
+        <div
+          className={classes.footerText}
+          style={{ flexDirection: isMobile ? "column" : "row" }}
+        >
           <p>Created using React</p>
-          <GrReactjs size={28} />
+          <GrReactjs
+            size={28}
+            style={{ display: isMobile ? "none" : "initial" }}
+          />
+
           <p>
             Check out the source over on{" "}
             <a
               href="https://github.com/erasebegin/portfolio-2021"
               target="_blank"
               rel="noopener noreferrer"
+              style={{color:"#00296b"}}
             >
               Github
             </a>
@@ -67,7 +77,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GitHubIcon />
+            <GitHubIcon style={{ display: isMobile ? "none" : "initial", color:"#00296b" }} />
           </a>
         </div>
       </Typography>

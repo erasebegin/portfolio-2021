@@ -52,6 +52,7 @@ export const useStyles = makeStyles((theme) => ({
     marginLeft: ".5em"
   },
   footerText: {
+    color: "#00296b",
     display: "flex",
     alignItems: "center",
     gap: ".5em",
