@@ -3,18 +3,14 @@ import React, { useEffect } from "react";
 import useWidth from "../hooks/UseWidth";
 
 export default function ImageModal({ isOpen, current, closeModal }) {
-  useEffect(() => {
-    const modalContainer = document.querySelector(".modal-container");
 
-    modalContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal-container")) {
-        closeModal();
-      }
-    });
-  }, []);
+  const checkClose = (e) => {
+    if (e.target.classList.contains("modal-container")) {
+            closeModal();
+          }
+  }
 
   const isMobile = useWidth();
-  console.log({ isMobile });
   const modalStyles = {
     container: {
       position: "fixed",
@@ -52,7 +48,7 @@ export default function ImageModal({ isOpen, current, closeModal }) {
   };
 
   return (
-    <div style={modalStyles.container} className="modal-container">
+    <div style={modalStyles.container} className="modal-container" onClick={checkClose}>
       <div style={modalStyles.innerContainer} className="modal-inner-container">
         <img
           src={current ? current.image : ""}

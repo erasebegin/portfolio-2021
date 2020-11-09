@@ -23,7 +23,7 @@ export default function FlagshipCards() {
 
   const openModal = (index) => {
     setCurrent(cards[index]);
-    setModalOpen(!modalOpen);
+    setModalOpen(true);
   };
 
   const cards = [
