@@ -53,7 +53,7 @@ export default function FlagshipCards() {
         "Custom pagination system",
         "Note: shop section currently undergoing changes",
       ],
-      url: "https://www.otherworld.com",
+      url: "https://www.otherworldink.com",
       repo: "https://github.com/erasebegin/otherworld-ink",
       image: otherworldScrn,
     },
