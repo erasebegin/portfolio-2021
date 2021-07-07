@@ -8,5 +8,5 @@
 - `react-icons`
 - `react-optimized-image`
 
-**Hosted at:*
+**Hosted at:**
 https://erasebegin.net/
