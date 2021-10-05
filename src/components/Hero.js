@@ -1,133 +1,136 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import styled, { css } from 'styled-components';
+import { HiMail, HiCode } from 'react-icons/hi';
+import { Link } from 'react-scroll';
 
-import useWidth from "../hooks/UseWidth";
-
-import mandala from "../media/mandala.png";
-import mandalaHalf from "../media/mandala-half.png";
-import headshot from "../media/headshot.jpg";
-import techStack from "../media/tech-stack.png";
-
-import ImageModal from "./ImageModal";
+import headshot from '../assets/images/headshot3.jpg';
 
 export default function Hero() {
-  const isMobile = useWidth();
-
-  const [modalOpen, setModalOpen] = useState(false);
-  const current = {
-    descFull: [],
-    image: techStack,
-  };
-
-  const openModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
-  const useStyles = makeStyles((theme) => ({
-    heroContent: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(8, 0, 6),
-    },
-    innerContainer: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    heroButtons: {
-      marginBottom: 10,
-      textDecoration: "none",
-    },
-    mandala1: {
-      position: "absolute",
-      maxHeight: isMobile ? 300 : 700,
-      top: 0,
-      right: 0,
-      transform: "translate(0, -50%)",
-      overflow: "hidden",
-    },
-    mandala2: {
-      position: "absolute",
-      maxHeight: isMobile ? 300 : 700,
-      top: 0,
-      left: 0,
-      transform: "translate(-50%, -50%)",
-    },
-    headshot: {
-      maxHeight: isMobile ? 100 : 250,
-      margin: "auto",
-      borderRadius: "40%",
-      marginBottom: "2em",
-    },
-  }));
-
-  const classes = useStyles();
-
   return (
-    <div className={classes.heroContent}>
-      <ImageModal
-        isOpen={modalOpen}
-        current={current}
-        closeModal={() => setModalOpen(false)}
-      />
-      <img src={mandalaHalf} className={classes.mandala1} />
-      <img src={mandala} className={classes.mandala2} />
-      <Container maxWidth="sm" className={classes.innerContainer}>
-        <img src={headshot} className={classes.headshot} />
-        <Typography
-          component="h1"
-          variant={isMobile ? "h4" : "h2"}
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Chris Haupt's
-        </Typography>
-        <Typography
-          component="h1"
-          variant={isMobile ? "h3" : "h1"}
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          Portfolio
-        </Typography>
-        <Typography
-          variant={isMobile ? "h6" : "h5"}
-          align="center"
-          color="textSecondary"
-          paragraph
-        >
-          A collection of some of my favourite projects created over the last 2
-          years using various javascript frameworks.
-        </Typography>
-        <div className={classes.heroButtonContainer}>
-          <Grid container spacing={4} justify="center" align="center">
-            <Grid item>
-              <Button
-                variant="contained"
-                color="secondary"
-                className={classes.heroButtons}
-                onClick={openModal}
-              >
-                My skills 🐱‍👤
-              </Button>
-              <Grid item>
-                <Link className={classes.heroButtons} to="/contact">
-                  <Button variant="contained" color="primary">
-                    Say hi 👋
-                  </Button>
+    <div>
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <HeroTop>
+              <ImageContainer>
+                <StyledButton $left>
+                  <HiCode size="2rem" />
+                  <p>My skills</p>
+                </StyledButton>
+                <Image src={headshot} alt="headshot" />
+                <Link to="contact">
+                  <StyledButton $right>
+                    <HiMail size="2rem" />
+                    <p>Say hi</p>
+                  </StyledButton>
                 </Link>
-              </Grid>
-            </Grid>
-          </Grid>
-        </div>
+              </ImageContainer>
+              <h2>Chris Haupt's</h2>
+              <h1>Portfolio</h1>
+              <h5>
+                A collection of some of my favourite projects created over the
+                years using primarily <b>React</b>.
+              </h5>
+            </HeroTop>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
 }
+
+const HeroTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+
+  h1 {
+    font-family: ${(props) => props.theme.fonts.title};
+    font-weight: 600;
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-family: ${(props) => props.theme.fonts.title};
+    font-weight: 600;
+    font-size: 4rem;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
+
+  h5 {
+    text-align: center;
+    font-weight: 200;
+    max-width: 300px;
+  }
+`;
+
+const ImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Image = styled.img`
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+  z-index: 3;
+`;
+
+const StyledButton = styled(Button)`
+  height: 100px;
+  background: ${(props) => props.theme.colors.green};
+  border: none;
+  white-space: nowrap;
+
+  /* Left Button */
+  ${(props) =>
+    props.$left &&
+    css`
+      border-top-left-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+      padding-right: 3rem;
+      padding-left: 2rem;
+      margin-right: -2rem;
+    `};
+
+  /* Right Button */
+  ${(props) =>
+    props.$right &&
+    css`
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      padding-left: 4rem;
+      padding-right: 2rem;
+      margin-left: -2rem;
+    `};
+
+  &:hover {
+    background: ${(props) => props.theme.colors.blue};
+  }
+
+  &:focus {
+    background: ${(props) => props.theme.colors.blue};
+  }
+
+  &:active {
+    outline: red;
+    border: red;
+  }
+
+  svg {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-family: ${(props) => props.theme.fonts.main};
+  }
+`;

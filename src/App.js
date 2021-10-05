@@ -1,24 +1,38 @@
-import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-import Hero from "./components/Hero";
-import FlagshipCards from "./components/FlagshipCards"
-import IllustrationCards from "./components/IllustrationCards"
-import Cards from "./components/Cards"
-import Footer from "./components/Footer"
+import Hero from './components/Hero';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Section from './components/Section';
+import data from './data/cards';
 
 export default function Album() {
-
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <main style={{overflow:"hidden"}}>
-        <Hero />
-        <FlagshipCards />
-        <Cards />
-        <IllustrationCards />
-      </main>
-      <Footer />
-    </React.Fragment>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Hero />
+            {data.map((sectionData) => {
+              const { cards, title, color, columns, dividerColor, dividerAlt } =
+                sectionData || {};
+              return (
+                <Section
+                  cards={cards}
+                  title={title}
+                  color={color}
+                  dividerColor={dividerColor}
+                  dividerAlt={dividerAlt}
+                  columns={columns}
+                />
+              );
+            })}
+            <Contact />
+          </Col>
+        </Row>
+      </Container>
+      {/* <Footer /> */}
+    </>
   );
 }

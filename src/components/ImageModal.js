@@ -1,68 +1,74 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Card from 'react-bootstrap/Card';
 
-import useWidth from "../hooks/UseWidth";
-
-export default function ImageModal({ isOpen, current, closeModal }) {
+export default function ImageModal({ modalContent }) {
+  const [isOpen, setIsOpen] = useState(false);
+  console.log({ modalContent });
+  useEffect(() => {
+    if (Object.keys(modalContent).length > 0) {
+      setIsOpen(true);
+    }
+  }, [modalContent]);
 
   const checkClose = (e) => {
-    if (e.target.classList.contains("modal-container")) {
-            closeModal();
-          }
-  }
-
-  const isMobile = useWidth();
-  const modalStyles = {
-    container: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      background: "#000000bb",
-      height: "100vh",
-      width: "100vw",
-      zIndex: 100,
-      opacity: isOpen ? "1" : "0",
-      pointerEvents: isOpen ? "all" : "none",
-      transition: "all 200ms ease-out",
-      padding: "2% 10%",
-    },
-    innerContainer: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: isOpen
-        ? "translate(-50%, -50%) scale(1)"
-        : "translate(-50%, -50%) scale(0.5)",
-      transition: "all 200ms ease-out",
-      background: "white",
-    },
-    image: {
-      height: isMobile ? "auto" : "60vh",
-      width: isMobile ? "90vw" : "auto",
-      objectFit: isMobile ? "cover" : "initial",
-    },
-    text: {
-      color: "black",
-      fontSize: isMobile ? ".9rem" : "1.1rem",
-      lineHeight: "1.7em",
-    },
+    if (e.target.classList.contains('modal-container')) {
+      setIsOpen(false);
+    }
   };
 
   return (
-    <div style={modalStyles.container} className="modal-container" onClick={checkClose}>
-      <div style={modalStyles.innerContainer} className="modal-inner-container">
-        <img
-          src={current ? current.image : ""}
-          style={modalStyles.image}
-          className="modal-image"
-        />
-        <ul style={modalStyles.text} className="modal-text">
-          {current
-            ? current.descFull.map((item) => {
-                return <li>{item}</li>;
-              })
-            : ""}
-        </ul>
-      </div>
-    </div>
+    <ModalContainer
+      onClick={checkClose}
+      $isOpen={isOpen}
+      className="modal-container"
+    >
+      <InnerContainer>
+        <Card.Img src={modalContent?.image} />
+        <Body>
+          <ul>
+            {modalContent && modalContent.list?.map((item) => <li>{item}</li>)}
+          </ul>
+        </Body>
+      </InnerContainer>
+    </ModalContainer>
   );
 }
+
+const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000000bb;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  pointer-events: ${(props) => (props.$isOpen ? 'all' : 'none')};
+  transition: all 200ms ease-out;
+  padding: 2% 10%;
+`;
+
+const InnerContainer = styled(Card)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 90vh;
+  transition: all 200ms ease-out;
+  background: white;
+  overflow-y: auto;
+`;
+
+const Body = styled(Card.Body)`
+  padding: 2rem 1rem 2rem 3rem;
+
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+`;
