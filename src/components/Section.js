@@ -53,5 +53,8 @@ const Title = styled.h2`
   color: white;
   margin-bottom: 2rem;
   font-size: 2.5rem;
+  font-family: ${props => props.theme.fonts.title};
+  font-weight: 600;
+  font-size: 3rem;
   text-align: center;
 `;

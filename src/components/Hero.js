@@ -3,15 +3,20 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { HiMail, HiCode } from 'react-icons/hi';
 import { Link } from 'react-scroll';
+import Divider from './Divider';
 
 import headshot from '../assets/images/headshot3.jpg';
 
 export default function Hero() {
+
+  const colors = useTheme().colors
+
   return (
     <div>
+      <Divider color={colors.blue}/>
       <Container>
         <Row>
           <Col md={{ span: 6, offset: 3 }}>
@@ -47,7 +52,7 @@ const HeroTop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 10rem;
 
   h1 {
     font-family: ${(props) => props.theme.fonts.title};
@@ -67,6 +72,7 @@ const HeroTop = styled.div`
     text-align: center;
     font-weight: 200;
     max-width: 300px;
+    margin-bottom: 2rem;
   }
 `;
 
