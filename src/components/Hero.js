@@ -7,25 +7,28 @@ import styled, { css, useTheme } from 'styled-components';
 import { HiMail, HiCode } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import Divider from './Divider';
-
-import headshot from '../assets/images/headshot3.jpg';
+import Logos from './Logos';
+// IMAGES
+import headshot from '../assets/images/headshot3-small.jpg';
 
 export default function Hero() {
+  const [showLogos, setShowLogos] = useState(true);
 
-  const colors = useTheme().colors
+  const colors = useTheme().colors;
 
   return (
     <div>
-      <Divider color={colors.blue}/>
+      <Divider color={colors.blue} />
       <Container>
         <Row>
           <Col md={{ span: 6, offset: 3 }}>
             <HeroTop>
               <ImageContainer>
-                <StyledButton $left>
+                <StyledButton onClick={() => setShowLogos(!showLogos)} $left>
                   <HiCode size="2rem" />
                   <p>My skills</p>
                 </StyledButton>
+                <Logos showLogos={showLogos} />
                 <Image src={headshot} alt="headshot" />
                 <Link to="contact">
                   <StyledButton $right>
@@ -52,7 +55,7 @@ const HeroTop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 12rem;
 
   h1 {
     font-family: ${(props) => props.theme.fonts.title};
@@ -79,6 +82,7 @@ const HeroTop = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const Image = styled.img`
