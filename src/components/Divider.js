@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
-export default function Divider({ color, alt }) {
+export default function Divider({ color, alt, invert }) {
 
   if (alt) {
     return (
@@ -22,7 +22,7 @@ export default function Divider({ color, alt }) {
   }
 
   return (
-    <StyledSvg $color={color}>
+    <StyledSvg $invert={invert} $color={color}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +57,10 @@ const StyledSvg = styled.div`
   transform: scaleY(0.5);
   overflow: hidden;
   line-height: 0;
+
+  ${props => props.$invert && css`
+    transform: scaleY(-0.5);
+  `}
 
   svg {
     fill: ${(props) => (props.$color ? props.$color : 'white')};

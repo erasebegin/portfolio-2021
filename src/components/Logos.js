@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import useWidth from '../hooks/UseWidth';
 // IMAGES
 import contentfulLogo from '../assets/images/logos/contentful.svg';
 import gatsbyLogo from '../assets/images/logos/gatsby.svg';
@@ -9,9 +10,15 @@ import reactLogo from '../assets/images/logos/react.svg';
 import styledLogo from '../assets/images/logos/styled.jpg';
 
 export default function Logos({ showLogos }) {
+  const isMobile = useWidth();
+
   return (
     <LogoContainer>
-      <Logo $show={showLogos} $moveX={'-200%'} $moveY={'-150%'}>
+      <Logo
+        $show={showLogos}
+        $moveX={isMobile ? '-80%' : '-200%'}
+        $moveY={isMobile ? '-120%' : '-150%'}
+      >
         <img src={javascriptLogo} alt="javascript logo" />
         <p>javascript</p>
       </Logo>
@@ -32,7 +39,11 @@ export default function Logos({ showLogos }) {
         <img src={gatsbyLogo} alt="gatsby logo" />
         <p>gatsby</p>
       </Logo>
-      <Logo $show={showLogos} $moveX={'170%'} $moveY={'-150%'}>
+      <Logo
+        $show={showLogos}
+        $moveX={isMobile ? '80%' : '170%'}
+        $moveY={isMobile ? '-120%' : '-150%'}
+      >
         <img src={contentfulLogo} alt="contentful logo" />
         <p>contentful</p>
       </Logo>
@@ -47,6 +58,7 @@ const LogoContainer = styled.div`
   transform: translateX(-50%);
   display: flex;
   z-index: 10;
+}
 `;
 
 const Logo = styled.div`
@@ -54,9 +66,11 @@ const Logo = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;
   width: 50px;
+  pointer-events: none;
   transition: 200ms ease-in-out;
+  opacity: 0;
+  
   
   ${(props) =>
     props.$show &&

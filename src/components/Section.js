@@ -11,6 +11,7 @@ export default function Section({
   color,
   columns,
   dividerColor,
+  buttonColor,
   dividerAlt
 }) {
   const [modalContent, setModalContent] = useState({});
@@ -31,7 +32,7 @@ export default function Section({
             <Col md={columns ? columns : 6}>
               <Card
                 data={cardData}
-                buttonColor={colors[color]}
+                buttonColor={colors[buttonColor]}
                 setModalContent={setModalContent}
               />
             </Col>

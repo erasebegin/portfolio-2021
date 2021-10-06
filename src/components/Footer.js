@@ -1,83 +1,119 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GithubIcon from '@material-ui/icons/GitHub';
-import InstaIcon from '@material-ui/icons/Instagram';
-import MailIcon from '@material-ui/icons/Mail';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import { GrReactjs } from 'react-icons/gr';
-
-import useWidth from '../hooks/UseWidth';
+import styled, { useTheme } from 'styled-components';
+import {
+  GrReactjs,
+  GrLinkedin,
+  GrGithub,
+  GrMail,
+  GrInstagram
+} from 'react-icons/gr';
+import Divider from './Divider';
 
 export default function Footer() {
-  const isMobile = useWidth();
+  const colors = useTheme().colors;
 
   return (
-    <footer>
-      <Typography
-        variant="subtitle1"
-        align="center"
-        color="textSecondary"
-        component="p"
-      >
-        <a
+    <StyledFooter>
+      <Divider color={colors.blue} invert />
+      <ContactLinkContainer>
+        <ContactLink
           href="https://www.linkedin.com/in/chris-haupt/"
           target="_blank"
           rel="noopener noreferrer"
-          className="contact-link"
         >
-          <LinkedInIcon />
-        </a>
-        <a
+          <GrLinkedin size="2rem" />
+        </ContactLink>
+        <ContactLink
           href="https://www.github.com/erasebegin"
           target="_blank"
           rel="noopener noreferrer"
-          className="contact-link"
         >
-          <GithubIcon />
-        </a>
-        <a
+          <GrGithub size="2rem" />
+        </ContactLink>
+        <ContactLink
           href="https://www.instagram.com/christhaupt/"
           target="_blank"
           rel="noopener noreferrer"
-          className="contact-link"
         >
-          <InstaIcon />
-        </a>
-        <MailIcon />
-        <div style={{ flexDirection: isMobile ? 'column' : 'row' }}>
-          <p>Created using React</p>
-          <GrReactjs
-            size={28}
-            style={{ display: isMobile ? 'none' : 'initial' }}
-          />
-
-          <p>
-            Check out the source over on{' '}
-            <a
-              href="https://github.com/erasebegin/portfolio-2021"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#00296b' }}
-            >
-              Github
-            </a>
-          </p>
+          <GrInstagram size="2rem" />
+        </ContactLink>
+        <ContactLink
+          href="mailto:chris.james.haupt@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GrMail size="2rem" />
+        </ContactLink>
+      </ContactLinkContainer>
+      <FooterTextContainer>
+        <p>Created using <b>React</b></p>
+        <GrReactjs size="2rem" />
+        <p>
+          Check out the source over on{' '}
           <a
             href="https://github.com/erasebegin/portfolio-2021"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GitHubIcon
-              style={{
-                display: isMobile ? 'none' : 'initial',
-                color: '#00296b'
-              }}
-            />
+            Github
           </a>
-        </div>
-      </Typography>
-    </footer>
+        </p>
+      </FooterTextContainer>
+    </StyledFooter>
   );
 }
+
+const StyledFooter = styled.footer`
+  background: ${(props) => props.theme.colors.blue};
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+`;
+
+const ContactLink = styled.a`
+  color: ${(props) => props.theme.colors.white};
+  margin-left: 1rem;
+
+  &:hover {
+    color: ${props => props.theme.colors.yellow};
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+`;
+
+const ContactLinkContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const FooterTextContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: white;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  svg {
+    margin: 0 0.5rem;
+    color: ${props => props.theme.colors.white};
+  }
+
+  a {
+    color: ${props => props.theme.colors.yellow};
+  }
+
+  @media(max-width: 700px) {
+    flex-direction: column;
+
+    svg {
+      display: none;
+    }
+  }
+`;

@@ -12,7 +12,7 @@ import Logos from './Logos';
 import headshot from '../assets/images/headshot3-small.jpg';
 
 export default function Hero() {
-  const [showLogos, setShowLogos] = useState(true);
+  const [showLogos, setShowLogos] = useState(false);
 
   const colors = useTheme().colors;
 
@@ -69,12 +69,17 @@ const HeroTop = styled.div`
     font-size: 4rem;
     margin-bottom: 0;
     line-height: 1rem;
+
+    @media(max-width: 600px){
+      margin-top: 4rem;
+    }
   }
 
   h5 {
     text-align: center;
     font-weight: 200;
-    max-width: 300px;
+    font-size: 2rem;
+    max-width: 400px;
     margin-bottom: 2rem;
   }
 `;
@@ -83,6 +88,10 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+
+  @media(max-width: 600px){
+    flex-direction: column;
+  }
 `;
 
 const Image = styled.img`
@@ -109,6 +118,16 @@ const StyledButton = styled(Button)`
       padding-right: 3rem;
       padding-left: 2rem;
       margin-right: -2rem;
+
+      @media(max-width: 600px){
+        height: auto;
+        width: 120px;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding: 1rem 0 3rem;
+        margin-right: 0;
+        margin-bottom: -2rem;
+      }
     `};
 
   /* Right Button */
@@ -120,6 +139,16 @@ const StyledButton = styled(Button)`
       padding-left: 4rem;
       padding-right: 2rem;
       margin-left: -2rem;
+
+      @media(max-width: 600px){
+        height: auto;
+        width: 120px;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        padding: 3rem 0 1rem;
+        margin-left: 0;
+        margin-top: -5rem;
+      }
     `};
 
   &:hover {

@@ -23,6 +23,7 @@ const data = [
     title: 'Flagship Projects',
     color: 'yellow',
     dividerColor: 'white',
+    buttonColor: 'orangeDark',
     dividerAlt: true,
     cards: [
       {
@@ -91,6 +92,7 @@ const data = [
     title: 'Minor Projects',
     color: 'orangeLight',
     dividerColor: 'yellow',
+    buttonColor: 'orangeDark',
     cards: [
       {
         title: 'Github User Search',
@@ -160,8 +162,9 @@ const data = [
   },
   {
     title: 'Illustration',
-    color: 'orangeDark',
+    color: 'yellow',
     dividerColor: 'orangeLight',
+    buttonColor: 'orangeDark',
     columns: 4,
     externalUrl: 'https://www.thinkdrops.art/',
     cards: [

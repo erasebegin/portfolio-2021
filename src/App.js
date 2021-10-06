@@ -15,14 +15,22 @@ export default function Album() {
           <Col>
             <Hero />
             {data.map((sectionData) => {
-              const { cards, title, color, columns, dividerColor, dividerAlt } =
-                sectionData || {};
+              const {
+                cards,
+                title,
+                color,
+                columns,
+                dividerColor,
+                buttonColor,
+                dividerAlt
+              } = sectionData || {};
               return (
                 <Section
                   cards={cards}
                   title={title}
                   color={color}
                   dividerColor={dividerColor}
+                  buttonColor={buttonColor}
                   dividerAlt={dividerAlt}
                   columns={columns}
                 />
@@ -32,7 +40,7 @@ export default function Album() {
           </Col>
         </Row>
       </Container>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
