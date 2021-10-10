@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
 
 import Hero from './components/Hero';
 import Contact from './components/Contact';
@@ -9,10 +9,7 @@ import data from './data/cards';
 
 export default function Album() {
   return (
-    <>
-      <Container>
-        <Row>
-          <Col>
+    <PageContainer>
             <Hero />
             {data.map((sectionData) => {
               const {
@@ -37,10 +34,11 @@ export default function Album() {
               );
             })}
             <Contact />
-          </Col>
-        </Row>
-      </Container>
       <Footer />
-    </>
+    </PageContainer>
   );
 }
+
+const PageContainer = styled.div`
+  min-width: 350px;
+`;

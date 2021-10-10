@@ -2,9 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { GrGithub } from 'react-icons/gr';
+import useWidth from '../hooks/UseWidth';
 
 export default function PortfolioCard({ data, setModalContent, buttonColor }) {
   const { title, description, image, repoUrl, demoUrl, modal } = data || {};
+  const isMobile = useWidth();
+
   return (
     <StyledCard $buttonColor={buttonColor}>
       <a href={demoUrl} rel="noopener noreferrer" target="_blank">
@@ -22,7 +26,7 @@ export default function PortfolioCard({ data, setModalContent, buttonColor }) {
         </a>
         {repoUrl && (
           <a href={repoUrl} rel="noopener noreferrer" target="_blank">
-            <Button>Github</Button>
+            <Button><GrGithub size="1.5rem" /></Button>
           </a>
         )}
         {modal && (
@@ -50,6 +54,10 @@ const StyledCard = styled(Card)`
     background: ${(props) => props.$buttonColor};
     border: ${(props) => props.$buttonColor};
     font-weight: bold;
+
+    @media (max-width: 600px) {
+      margin-right: 0.5rem;
+    }
 
     &:hover {
       background: ${(props) => props.$buttonColor};

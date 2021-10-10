@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function UseWidth() {
   const [isMobile, setIsMobile] = useState(true);
   useEffect(() => {
-    window.innerWidth <= 1000 ? setIsMobile(true) : setIsMobile(false);
+    window.innerWidth <= 600 ? setIsMobile(true) : setIsMobile(false);
   });
 
   if (typeof window === "undefined") {
@@ -11,7 +11,7 @@ export default function UseWidth() {
   }
 
   window.onresize = function () {
-    window.innerWidth <= 800 ? setIsMobile(true) : setIsMobile(false);
+    window.innerWidth <= 600 ? setIsMobile(true) : setIsMobile(false);
   };
 
   return isMobile;

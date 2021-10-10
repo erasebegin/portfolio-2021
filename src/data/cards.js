@@ -31,7 +31,7 @@ const data = [
         image: ishaEurope,
         description:
           'Created several drop-in pages for the <a href="https://www.ishayoga.eu" rel="noopener noreferrer" target="_blank">ishayoga.eu</a> website using vanilla React.',
-        repoUrl: 'https://github.com/erasebegin/soulstamina-shop',
+        repoUrl: 'https://github.com/erasebegin/yoga-veera-stay-connected',
         demoUrl: 'https://webinar-stay-connected.netlify.app/',
         modal: [
           'Multi-language support',
@@ -113,7 +113,7 @@ const data = [
       {
         title: 'Scrabble Letters',
         description:
-          'A small web app that acts as a virtual scrabble letter bag',
+          'A small web app that acts as a virtual scrabble letter bag for use in online classrooms',
         image: scrabbleImage,
         demoUrl: 'https://scrabble-letters.netlify.app',
         repoUrl: 'https://github.com/erasebegin/scrabble-letters'

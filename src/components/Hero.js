@@ -24,10 +24,20 @@ export default function Hero() {
           <Col md={{ span: 6, offset: 3 }}>
             <HeroTop>
               <ImageContainer>
-                <StyledButton onClick={() => setShowLogos(!showLogos)} $left>
+                <StyledButton
+                  onClick={() => setShowLogos(!showLogos)}
+                  $left
+                  $showLogos={showLogos}
+                >
                   <HiCode size="2rem" />
                   <p>My skills</p>
                 </StyledButton>
+                <StyledButtonClose
+                  onClick={() => setShowLogos(false)}
+                  $showLogos={showLogos}
+                >
+                  X
+                </StyledButtonClose>
                 <Logos showLogos={showLogos} />
                 <Image src={headshot} alt="headshot" />
                 <Link to="contact">
@@ -57,10 +67,18 @@ const HeroTop = styled.div`
   align-items: center;
   padding-top: 12rem;
 
+  @media (max-width: 600px) {
+    padding-top: 6rem;
+  }
+
   h1 {
     font-family: ${(props) => props.theme.fonts.title};
     font-weight: 600;
     font-size: 8rem;
+
+    @media (max-width: 600px) {
+      font-size: 6rem;
+    }
   }
 
   h2 {
@@ -70,8 +88,9 @@ const HeroTop = styled.div`
     margin-bottom: 0;
     line-height: 1rem;
 
-    @media(max-width: 600px){
+    @media (max-width: 600px) {
       margin-top: 4rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -81,6 +100,10 @@ const HeroTop = styled.div`
     font-size: 2rem;
     max-width: 400px;
     margin-bottom: 2rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -89,7 +112,7 @@ const ImageContainer = styled.div`
   align-items: center;
   position: relative;
 
-  @media(max-width: 600px){
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
@@ -101,6 +124,11 @@ const Image = styled.img`
   border-radius: 50%;
   margin-bottom: 3rem;
   z-index: 3;
+
+  @media (max-width: 600px) {
+    height: 350px;
+    width: 350px;
+  }
 `;
 
 const StyledButton = styled(Button)`
@@ -109,7 +137,7 @@ const StyledButton = styled(Button)`
   border: none;
   white-space: nowrap;
 
-  /* Left Button */
+  /* Skills Button (Desktop:Left,Mobile:Top) */
   ${(props) =>
     props.$left &&
     css`
@@ -119,7 +147,7 @@ const StyledButton = styled(Button)`
       padding-left: 2rem;
       margin-right: -2rem;
 
-      @media(max-width: 600px){
+      @media (max-width: 600px) {
         height: auto;
         width: 120px;
         border-top-right-radius: 2rem;
@@ -127,10 +155,13 @@ const StyledButton = styled(Button)`
         padding: 1rem 0 3rem;
         margin-right: 0;
         margin-bottom: -2rem;
+        /* margin-bottom: ${props.$showLogos ? '-9rem' : '-2rem'}; */
+        transform: translateY(${props.$showLogos ? '100%' : '0%'});
+        transition: 200ms ease-in-out;
       }
     `};
 
-  /* Right Button */
+  /* Contact Button (Desktop:Right,Mobile:Bottom) */
   ${(props) =>
     props.$right &&
     css`
@@ -140,7 +171,7 @@ const StyledButton = styled(Button)`
       padding-right: 2rem;
       margin-left: -2rem;
 
-      @media(max-width: 600px){
+      @media (max-width: 600px) {
         height: auto;
         width: 120px;
         border-top-left-radius: 2rem;
@@ -171,5 +202,19 @@ const StyledButton = styled(Button)`
   p {
     margin-bottom: 0;
     font-family: ${(props) => props.theme.fonts.main};
+  }
+`;
+
+const StyledButtonClose = styled(StyledButton)`
+  position: absolute;
+  top: ${(props) => (props.$showLogos ? '4rem' : '8rem')};
+  margin-right: 4rem;
+  height: 80px;
+  border-radius: 2rem;
+  padding-bottom: 4rem;
+  transition: top 200ms ease-in-out;
+
+  @media (min-width: 600px) {
+    display: none;
   }
 `;
