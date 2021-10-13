@@ -1,6 +1,6 @@
 # Chris Haupt's Portfolio 2021
 
-### Created using `create-reaect-app`
+### Created using `create-react-app`
 
 **Installed Packages:**
 - `material-ui`
