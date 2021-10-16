@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { GrGithub } from 'react-icons/gr';
-import useWidth from '../hooks/UseWidth';
 
 export default function PortfolioCard({ data, setModalContent, buttonColor }) {
+
   const { title, description, image, repoUrl, demoUrl, modal } = data || {};
-  const isMobile = useWidth();
 
   return (
     <StyledCard $buttonColor={buttonColor}>
@@ -16,9 +15,7 @@ export default function PortfolioCard({ data, setModalContent, buttonColor }) {
       </a>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>
-          <p dangerouslySetInnerHTML={{ __html: description }} />
-        </Card.Text>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </Card.Body>
       <Card.Footer>
         <a href={demoUrl} rel="noopener noreferrer" target="_blank">

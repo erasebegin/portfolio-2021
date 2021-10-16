@@ -28,8 +28,8 @@ export default function Section({
           </Col>
         </Row>
         <Row>
-          {cards.map((cardData) => (
-            <Col md={columns ? columns : 6}>
+          {cards.map((cardData, index) => (
+            <Col md={columns ? columns : 6} key={index}>
               <Card
                 data={cardData}
                 buttonColor={colors[buttonColor]}

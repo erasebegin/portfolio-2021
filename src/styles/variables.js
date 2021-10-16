@@ -11,6 +11,9 @@ const variables = {
     fonts: {
         title: "Phenomena",
         main: "'Heebo', sans-serif"
+    },
+    breakpoints: {
+        mobile: 600
     }
 }
 

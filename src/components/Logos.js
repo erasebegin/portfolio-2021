@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import useWidth from '../hooks/UseWidth';
+import useIsMobile from '../hooks/useIsMobile';
 // IMAGES
 import contentfulLogo from '../assets/images/logos/contentful.svg';
 import gatsbyLogo from '../assets/images/logos/gatsby.svg';
@@ -10,7 +10,7 @@ import reactLogo from '../assets/images/logos/react.svg';
 import graphqlLogo from '../assets/images/logos/graphql.svg';
 
 export default function Logos({ showLogos }) {
-  const isMobile = useWidth();
+  const isMobile = useIsMobile();
 
   return (
     <LogoContainer>

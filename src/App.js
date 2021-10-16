@@ -10,30 +10,31 @@ import data from './data/cards';
 export default function Album() {
   return (
     <PageContainer>
-            <Hero />
-            {data.map((sectionData) => {
-              const {
-                cards,
-                title,
-                color,
-                columns,
-                dividerColor,
-                buttonColor,
-                dividerAlt
-              } = sectionData || {};
-              return (
-                <Section
-                  cards={cards}
-                  title={title}
-                  color={color}
-                  dividerColor={dividerColor}
-                  buttonColor={buttonColor}
-                  dividerAlt={dividerAlt}
-                  columns={columns}
-                />
-              );
-            })}
-            <Contact />
+      <Hero />
+      {data.map((sectionData, index) => {
+        const {
+          cards,
+          title,
+          color,
+          columns,
+          dividerColor,
+          buttonColor,
+          dividerAlt
+        } = sectionData || {};
+        return (
+          <Section
+            key={index}
+            cards={cards}
+            title={title}
+            color={color}
+            dividerColor={dividerColor}
+            buttonColor={buttonColor}
+            dividerAlt={dividerAlt}
+            columns={columns}
+          />
+        );
+      })}
+      <Contact />
       <Footer />
     </PageContainer>
   );
