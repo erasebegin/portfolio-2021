@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'Phenomena';
-    src: url('../assets/fonts/phenomena-bold-webfont.woff2') format('woff2');
-    src: url('../assets/fonts/phenomena-bold-webfont.woff') format('woff');
+    src: url('../styles/fonts/phenomena-bold-webfont.woff2') format('woff2');
+    src: url('../styles/fonts/phenomena-bold-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -11,8 +11,8 @@
   
   @font-face {
     font-family: 'Phenomena';
-    src: url('../assets/fonts/phenomena-extrabold-webfont.woff2') format('woff2');
-    src: url('../assets/fonts/phenomena-extrabold-webfont.woff') format('woff');
+    src: url('../styles/fonts/phenomena-extrabold-webfont.woff2') format('woff2');
+    src: url('../styles/fonts/phenomena-extrabold-webfont.woff') format('woff');
     font-weight: 600;
     font-style: bold;
     font-display: swap;
@@ -20,28 +20,28 @@
   
   @font-face {
     font-family: 'Heebo';
-    src: url('../assets/fonts/Heebo-ExtraLight.ttf') format('truetype');
+    src: url('../styles/fonts/Heebo-ExtraLight.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
   }
   
   @font-face {
     font-family: 'Heebo';
-    src: url('../assets/fonts/Heebo-Light.ttf') format('truetype');
+    src: url('../styles/fonts/Heebo-Light.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Heebo';
-    src: url('../assets/fonts/Heebo-Medium.ttf') format('truetype');
+    src: url('../styles/fonts/Heebo-Medium.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Heebo';
-    src: url('../assets/fonts/Heebo-Regular.ttf') format('truetype');
+    src: url('../styles/fonts/Heebo-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
   }

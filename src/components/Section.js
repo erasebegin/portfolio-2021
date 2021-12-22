@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import styled, { useTheme } from 'styled-components';
-import { Container, Row, Col } from 'react-bootstrap';
-import Card from './Card';
-import ImageModal from './ImageModal';
-import Divider from './Divider';
+import React, { useState } from "react";
+import styled, { useTheme } from "styled-components";
+import { Container, Row, Col } from "react-bootstrap";
+import Card from "./Card";
+import ImageModal from "./ImageModal";
+import Divider from "./Divider";
 
-export default function Section({
-  title,
-  cards,
-  color,
-  columns,
-  dividerColor,
-  buttonColor,
-  dividerAlt
-}) {
+export default function Section({ sectionData }) {
+  const {
+    cards,
+    title,
+    subtitle,
+    color,
+    columns,
+    dividerColor,
+    buttonColor,
+    dividerAlt,
+  } = sectionData || {};
+
   const [modalContent, setModalContent] = useState({});
   const colors = useTheme().colors;
 
@@ -25,11 +28,12 @@ export default function Section({
         <Row>
           <Col>
             <Title>{title}</Title>
+            <Subtitle>{subtitle}</Subtitle>
           </Col>
         </Row>
         <Row>
           {cards.map((cardData, index) => (
-            <Col md={columns ? columns : 6} key={index}>
+            <Col md={columns ? columns : 4} key={index}>
               <Card
                 data={cardData}
                 buttonColor={colors[buttonColor]}
@@ -55,11 +59,17 @@ const StyledSection = styled.div`
 `;
 
 const Title = styled.h2`
-  color: white;
-  margin-bottom: 2rem;
+  color: ${(props) => props.theme.colors.blackGreen};
+  margin-bottom: 0.5rem;
   font-size: 2.5rem;
   font-family: ${(props) => props.theme.fonts.title};
   font-weight: 600;
   font-size: 3rem;
   text-align: center;
+`;
+
+const Subtitle = styled.h3`
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 `;

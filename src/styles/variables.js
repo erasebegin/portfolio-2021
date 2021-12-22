@@ -1,11 +1,11 @@
 const variables = {
     colors: {
-        blue: "#065F73",
-        green: "#075951",
-        yellow: "#F2CD13",
-        orangeLight: "#F2B90F",
-        orangeDark: "#D98825",
-        white: "white"
+        blue: "#A9B6CC",
+        green: "#BDCC94",
+        yellow: "#FFEC67",
+        greyGreen: "#95998A",
+        blackGreen: "#171A14",
+        white: "#FFFFFF"
     },
 
     fonts: {

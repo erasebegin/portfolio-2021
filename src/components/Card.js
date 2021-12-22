@@ -19,7 +19,7 @@ export default function PortfolioCard({ data, setModalContent, buttonColor }) {
       </Card.Body>
       <Card.Footer>
         <a href={demoUrl} rel="noopener noreferrer" target="_blank">
-          <Button>View</Button>
+          <Button>Demo</Button>
         </a>
         {repoUrl && (
           <a href={repoUrl} rel="noopener noreferrer" target="_blank">

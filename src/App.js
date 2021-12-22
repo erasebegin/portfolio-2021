@@ -12,25 +12,10 @@ export default function Album() {
     <PageContainer>
       <Hero />
       {data.map((sectionData, index) => {
-        const {
-          cards,
-          title,
-          color,
-          columns,
-          dividerColor,
-          buttonColor,
-          dividerAlt
-        } = sectionData || {};
         return (
           <Section
-            key={index}
-            cards={cards}
-            title={title}
-            color={color}
-            dividerColor={dividerColor}
-            buttonColor={buttonColor}
-            dividerAlt={dividerAlt}
-            columns={columns}
+            key={`section${index}`}
+            sectionData={sectionData}
           />
         );
       })}

@@ -8,8 +8,6 @@ import { HiMail, HiCode } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import Divider from './Divider';
 import Logos from './Logos';
-// IMAGES
-import headshot from '../assets/images/headshot3-small.jpg';
 
 export default function Hero() {
   const [showLogos, setShowLogos] = useState(false);
@@ -39,7 +37,7 @@ export default function Hero() {
                   X
                 </StyledButtonClose>
                 <Logos showLogos={showLogos} />
-                <Image src={headshot} alt="headshot" />
+                <Image src='./images/headshot3-small.jpg' alt="headshot" />
                 <Link to="contact">
                   <StyledButton $right>
                     <HiMail size="2rem" />
@@ -66,6 +64,7 @@ const HeroTop = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 12rem;
+  color: ${props=>props.theme.colors.blackGreen};
 
   @media (max-width: 600px) {
     padding-top: 6rem;
@@ -136,8 +135,9 @@ const StyledButton = styled(Button)`
   background: ${(props) => props.theme.colors.green};
   border: none;
   white-space: nowrap;
+  color: ${props=>props.theme.colors.blackGreen};
 
-  /* Skills Button (Desktop:Left,Mobile:Top) */
+  /* Skills Button (Desktop:Left, Mobile:Top) */
   ${(props) =>
     props.$left &&
     css`
@@ -155,13 +155,12 @@ const StyledButton = styled(Button)`
         padding: 1rem 0 3rem;
         margin-right: 0;
         margin-bottom: -2rem;
-        /* margin-bottom: ${props.$showLogos ? '-9rem' : '-2rem'}; */
         transform: translateY(${props.$showLogos ? '100%' : '0%'});
         transition: 200ms ease-in-out;
       }
     `};
 
-  /* Contact Button (Desktop:Right,Mobile:Bottom) */
+  /* Contact Button (Desktop:Right, Mobile:Bottom) */
   ${(props) =>
     props.$right &&
     css`

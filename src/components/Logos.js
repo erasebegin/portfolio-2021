@@ -2,12 +2,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import useIsMobile from '../hooks/useIsMobile';
 // IMAGES
-import contentfulLogo from '../assets/images/logos/contentful.svg';
-import gatsbyLogo from '../assets/images/logos/gatsby.svg';
-import javascriptLogo from '../assets/images/logos/javascript.svg';
-import nextLogo from '../assets/images/logos/next-js.svg';
-import reactLogo from '../assets/images/logos/react.svg';
-import graphqlLogo from '../assets/images/logos/graphql.svg';
+// import contentfulLogo from '../assets/images/logos/contentful.svg';
+// import gatsbyLogo from '../assets/images/logos/gatsby.svg';
+// import javascriptLogo from '../assets/images/logos/javascript.svg';
+// import nextLogo from '../assets/images/logos/next-js.svg';
+// import reactLogo from '../assets/images/logos/react.svg';
+// import graphqlLogo from '../assets/images/logos/graphql.svg';
 
 export default function Logos({ showLogos }) {
   const isMobile = useIsMobile();
@@ -19,7 +19,7 @@ export default function Logos({ showLogos }) {
         $moveX={isMobile ? '-10%' : '-200%'}
         $moveY={isMobile ? '-140%' : '-150%'}
       >
-        <img src={javascriptLogo} alt="javascript logo" />
+        <img src='./images/logos/javascript.svg' alt="javascript logo" />
         <p>javascript</p>
       </Logo>
       <Logo
@@ -27,7 +27,7 @@ export default function Logos({ showLogos }) {
         $moveX={isMobile ? '-60%' : '-150%'}
         $moveY={isMobile ? '-280%' : '-250%'}
       >
-        <img src={reactLogo} alt="react logo" />
+        <img src='./images/logos/react.svg' alt="react logo" />
         <p>react</p>
       </Logo>
       <Logo
@@ -35,15 +35,15 @@ export default function Logos({ showLogos }) {
         $moveX={isMobile ? '0%' : '-80%'}
         $moveY={isMobile ? '-250%' : '-300%'}
       >
-        <img src={graphqlLogo} alt="graphql logo" />
+        <img src='./images/logos/graphql.svg' alt="graphql logo" />
         <p>graphql</p>
       </Logo>
       <Logo $show={showLogos} $moveX={isMobile?'50%':'0%'} $moveY={isMobile ? '-150%':'-300%'}>
-        <img src={gatsbyLogo} alt="gatsby logo" />
+        <img src='./images/logos/gatsby.svg' alt="gatsby logo" />
         <p>gatsby</p>
       </Logo>
       <Logo $show={showLogos} $moveX={isMobile?'50%':'95%'} $moveY={isMobile?'-300%':'-280%'}>
-        <img src={nextLogo} alt="next JS logo" />
+        <img src='./images/logos/next-js.svg' alt="next JS logo" />
         <p>next.js</p>
       </Logo>
       <Logo
@@ -51,7 +51,7 @@ export default function Logos({ showLogos }) {
         $moveX={isMobile ? '20%' : '150%'}
         $moveY={isMobile ? '-120%' : '-190%'}
       >
-        <img src={contentfulLogo} alt="contentful logo" />
+        <img src='./images/logos/contentful.svg' alt="contentful logo" />
         <p>contentful</p>
       </Logo>
     </LogoContainer>
