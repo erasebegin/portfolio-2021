@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import styled, { useTheme } from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
+import { IoMdArrowDropright } from "react-icons/io";
+import { Button } from "react-bootstrap";
 import Card from "./Card";
 import ImageModal from "./ImageModal";
 import Divider from "./Divider";
+import TechIcon from "./TechIcon";
 
 export default function Section({ sectionData }) {
   const {
@@ -15,9 +18,11 @@ export default function Section({ sectionData }) {
     dividerColor,
     buttonColor,
     dividerAlt,
+    sectionInfo,
   } = sectionData || {};
 
   const [modalContent, setModalContent] = useState({});
+  const [showInfo, setShowInfo] = useState(false);
   const colors = useTheme().colors;
 
   return (
@@ -29,11 +34,29 @@ export default function Section({ sectionData }) {
           <Col>
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
+            <SectionInfo>
+              <SectionInfoBody showInfo={showInfo}>
+                <h4>{sectionInfo?.duration}</h4>
+                <p>{sectionInfo?.description}</p>
+                <TechIcons>
+                  {sectionInfo?.tech.map((type) => {
+                    return <TechIcon type={type} key={type} />;
+                  })}
+                </TechIcons>
+              </SectionInfoBody>
+              <BorderButton
+                background={colors[buttonColor]}
+                onClick={() => setShowInfo(!showInfo)}
+                showInfo={showInfo}
+              >
+                More info <IoMdArrowDropright size="1.5rem"/>
+              </BorderButton>
+            </SectionInfo>
           </Col>
         </Row>
         <Row>
           {cards.map((cardData, index) => (
-            <Col md={columns ? columns : 4} key={index}>
+            <Col md={6} lg={columns ? columns : 4} key={index}>
               <Card
                 data={cardData}
                 buttonColor={colors[buttonColor]}
@@ -53,6 +76,10 @@ const StyledSection = styled.div`
   padding-top: 10rem;
   position: relative;
 
+  button {
+    color: black;
+  }
+
   @media (max-width: 600px) {
     padding-top: 3rem;
   }
@@ -71,5 +98,60 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
   text-align: center;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: auto;
+  padding-bottom: 2rem;
+  max-width: 600px;
+`;
+
+const SectionInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+`;
+
+const SectionInfoBody = styled.div`
+  text-align: center;
+  max-height: ${(props) => (props.showInfo ? "1000px" : 0)};
+  opacity: ${(props) => (props.showInfo ? 1 : 0)};
+  padding-bottom: ${(props) => (props.showInfo ? "1rem" : 0)};
+  overflow: hidden;
+  transition: 400ms ease-in-out;
+
+  p {
+    max-width: 600px;
+  }
+`;
+
+const TechIcons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+`;
+
+const BorderButton = styled(Button)`
+  border: none;
+  background: ${(props) => props.background};
+  font-weight: bold;
+
+  &:hover {
+    background: ${(props) => props.background};
+    border: none;
+    color: ${(props) => props.theme.colors.blackGreen};
+    opacity: 0.8;
+  }
+
+  &:focus {
+    background: ${(props) => props.background};
+    border: none;
+    opacity: 0.8;
+    color: ${(props) => props.theme.colors.blackGreen};
+  }
+
+  svg {
+    transform: ${(props) =>
+      props.showInfo ? "rotate(-90deg)" : "rotate(90deg)"};
+    transition: transform 200ms;
+  }
 `;

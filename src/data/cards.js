@@ -21,10 +21,16 @@
 const data = [
   {
     title: 'Isha',
+    subtitle: 'Designing and creating user experiences to coincide with events throughout the year',
     color: 'yellow',
     dividerColor: 'white',
-    buttonColor: 'orangeDark',
+    buttonColor: 'green',
     dividerAlt: true,
+    sectionInfo: {
+      duration: 'Feb 2021 - Present',
+      description: 'Working as part of a small agile React team we make user experiences to drop into the ishayoga.eu PHP behemoth. We make landing pages, critical infrastructure and user journeys to coincide with various events and programs throughout the year',
+      tech: ['react','styled-components','node']
+    },
     cards: [
       {
         title: 'Stay Connected',
@@ -79,10 +85,15 @@ const data = [
     subtitle: 'Created pixel-perfect websites within small teams organised around AGILE methodologies',
     color: 'green',
     dividerColor: 'yellow',
-    buttonColor: 'orangeDark',
+    buttonColor: 'yellow',
+    sectionInfo: {
+      duration: 'Jan 2021 - Sep 2021',
+      description: 'Working as part of a small agile React team we make user experiences to drop into the ishayoga.eu PHP behemoth. We make landing pages, critical infrastructure and user journeys to coincide with various events and programs throughout the year',
+      tech: ['react','styled-components','node']
+    },
     cards: [
       {
-        title: 'Github User Search',
+        title: 'Halder',
         description:
           'Search utility to find information and repositories of Github users by name',
         image: './images/github-search.png',
@@ -90,7 +101,7 @@ const data = [
         repoUrl: 'https://github.com/erasebegin/git-user-search'
       },
       {
-        title: 'Hacker News Front End',
+        title: 'Cashmatters',
         description:
           'A front end for the somewhat quirky Hacker News API showing the top 10 stories and a comment tree',
         // image: hackerNews,
@@ -98,52 +109,12 @@ const data = [
         repoUrl: 'https://github.com/erasebegin/hacker-news-frontend'
       },
       {
-        title: 'Scrabble Letters',
+        title: 'Aftercloud',
         description:
           'A small web app that acts as a virtual scrabble letter bag for use in online classrooms',
         // image: scrabbleImage,
         demoUrl: 'https://scrabble-letters.netlify.app',
         repoUrl: 'https://github.com/erasebegin/scrabble-letters'
-      },
-      {
-        title: 'Weather Search',
-        description:
-          'Node Express weather API with a Handlebars front-end. Icons are all made by me ^_^',
-        // image: weatherImage,
-        demoUrl: 'https://quick-weather-search.herokuapp.com/',
-        repoUrl: 'https://github.com/erasebegin/weather-search'
-      },
-      {
-        title: 'Lisna Music',
-        description:
-          'Small landing page project for musician Lisna created using React',
-        // image: lisnaImage,
-        demoUrl: 'https://www.lisna.co.uk',
-        repoUrl: 'https://github.com/erasebegin/lisna-music'
-      },
-      {
-        title: 'Necessary Products',
-        description:
-          'A spoof product page created as one of my first explorations in to front-end development',
-        // image: necessaryImage,
-        demoUrl: 'https://erasebegin.github.io/necessary-products',
-        repoUrl: 'https://github.com/erasebegin/necessary-products'
-      },
-      {
-        title: 'Jotter',
-        description:
-          'A kind of PWA created in order to experiment with the localStorage browser functionality',
-        // image: jotter,
-        demoUrl: 'https://my-jotter.netlify.app/',
-        repoUrl: 'https://github.com/erasebegin/jotter'
-      },
-      {
-        title: 'Tyrex Unsurance',
-        description:
-          'Practicing CSS styling, specifically CSS grid by creating a spoof business page',
-        // image: tyrexImage,
-        demoUrl: 'https://erasebegin.github.io/tyrex-unsurance',
-        repoUrl: 'https://github.com/erasebegin/tyrex-unsurance'
       }
     ]
   },

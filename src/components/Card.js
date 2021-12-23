@@ -17,13 +17,13 @@ export default function PortfolioCard({ data, setModalContent, buttonColor }) {
         <Card.Title>{title}</Card.Title>
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </Card.Body>
-      <Card.Footer>
+      <Card.Footer className="text-center">
         <a href={demoUrl} rel="noopener noreferrer" target="_blank">
           <Button>Demo</Button>
         </a>
         {repoUrl && (
           <a href={repoUrl} rel="noopener noreferrer" target="_blank">
-            <Button><GrGithub size="1.5rem" /></Button>
+            <Button>Repo</Button>
           </a>
         )}
         {modal && (
@@ -47,7 +47,7 @@ const StyledCard = styled(Card)`
   }
 
   button {
-    margin-right: 1rem;
+    margin-right: 0.3125rem;
     background: ${(props) => props.$buttonColor};
     border: ${(props) => props.$buttonColor};
     font-weight: bold;

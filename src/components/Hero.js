@@ -49,7 +49,7 @@ export default function Hero() {
               <h1>Portfolio</h1>
               <h5>
                 A collection of some of my favourite projects created over the
-                years using primarily <b>React</b>.
+                years using <b>React</b>.
               </h5>
             </HeroTop>
           </Col>
