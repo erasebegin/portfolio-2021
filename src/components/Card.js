@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { GrGithub } from 'react-icons/gr';
 
 export default function PortfolioCard({ data, setModalContent, buttonColor }) {
 

@@ -2,24 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export default function Icon({ type }) {
-  let techLogoPath = "";
   const typeSplit = type.split("-").join(" ");
   const [show, setShow] = useState(false);
-
-  switch (type) {
-    case "react":
-      techLogoPath = "./images/logos/react.svg";
-      break;
-    case "styled-components":
-      techLogoPath = "./images/logos/styled.jpg";
-      break;
-    case "node":
-      techLogoPath = "./images/logos/node.svg";
-      break;
-
-    default:
-      techLogoPath = "";
-  }
 
   return (
     <IconContainer
@@ -27,7 +11,7 @@ export default function Icon({ type }) {
       onMouseLeave={() => setShow(false)}
       show={show}
     >
-      <img src={techLogoPath} alt={type} />
+      <img src={`./images/logos/${type}.svg`} alt={`${type} icon`} />
       <p>{typeSplit}</p>
     </IconContainer>
   );
@@ -37,6 +21,10 @@ const IconContainer = styled.div`
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   position: relative;
+
+  @media (max-width: 600px) {
+    margin-bottom: 1rem;
+  }
 
   &:first-child {
     margin-left: 0;

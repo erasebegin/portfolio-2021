@@ -120,14 +120,18 @@ const SectionInfoBody = styled.div`
 
   p {
     max-width: 600px;
+    padding-bottom: 1rem;
   }
 `;
 
 const TechIcons = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 1rem;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  background: #ffffff55;
+  border-radius: 0.5rem;
 `;
 
 const BorderButton = styled(Button)`
