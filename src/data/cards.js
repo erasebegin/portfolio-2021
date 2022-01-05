@@ -11,22 +11,29 @@ const data = [
       duration: "Feb 2021 - Present",
       description:
         "Working as part of a small agile React team we make user experiences to drop into the ishayoga.eu PHP behemoth. We make landing pages, critical infrastructure and user journeys to coincide with various events and programs throughout the year",
-      tech: ["react", "styled-components", "node", "bootstrap", "bitbucket"],
+      tech: [
+        "react",
+        "styled-components",
+        "node",
+        "bootstrap",
+        "bitbucket",
+        "contentful",
+      ],
     },
     cards: [
       {
         title: "Stay Connected",
         image: "./images/isha-europe.png",
         description:
-          'Created several drop-in pages for the <a href="https://www.ishayoga.eu" rel="noopener noreferrer" target="_blank">ishayoga.eu</a> website using vanilla React.',
+          "A drop-in react app to serve as the final stage of the user journey after attending a webinar.",
         repoUrl: "https://github.com/erasebegin/yoga-veera-stay-connected",
         demoUrl: "https://webinar-stay-connected.netlify.app/",
         modal: [
-          "Multi-language support",
+          "5 languages (determined by query param)",
           "Provided critical functionality for live event management platform",
           "Integrated React apps inside a PHP website",
           "Pixel-perfect recreations of provided designs",
-          "Complex time management logic to account for users from various time zones",
+          "Note: some functionality broken due to lack of maintenance",
         ],
       },
       {
@@ -46,11 +53,13 @@ const data = [
       },
       {
         title: "Join Now",
-        image: "./images/isha-europe.png",
+        image: "./images/join-now.png",
         description:
           'Created several drop-in pages for the <a href="https://www.ishayoga.eu" rel="noopener noreferrer" target="_blank">ishayoga.eu</a> website using vanilla React.',
-        repoUrl: "https://github.com/erasebegin/yoga-veera-stay-connected",
-        demoUrl: "https://webinar-stay-connected.netlify.app/",
+        repoUrl:
+          "https://github.com/erasebegin/yoga-veera-session-welcome-page",
+        demoUrl:
+          "https://staging.ishayoga.eu/events/join/index.html?region=EU&lang=en&eventType=Yoga%20for%20Immunity&eventTitle=Yoga%20for%20Immunity&eventId=2456&tokenId=71d482b558bca08e1422cb8179e62426&regId=282&t=2022-09-20-15-00&tz=IST",
         modal: [
           "Multi-language support",
           "Provided critical functionality for live event management platform",
@@ -79,6 +88,8 @@ const data = [
         "wagtail",
         "github",
         "jira",
+        "formik",
+        "graphql",
       ],
     },
     cards: [
@@ -95,6 +106,7 @@ const data = [
           "wagtail",
           "github",
           "jira",
+          "graphql",
         ],
       },
       {
@@ -110,6 +122,7 @@ const data = [
           "wagtail",
           "github",
           "jira",
+          "graphql",
         ],
       },
       {
@@ -125,15 +138,51 @@ const data = [
           "wagtail",
           "github",
           "jira",
+          "formik",
         ],
       },
     ],
   },
   {
     title: "Thinkdrops",
-    color: "orangeLight",
-    dividerColor: "yellow",
-    buttonColor: "orangeDark",
+    subtitle:
+      "Created portfolios, landing pages and ecommerce platforms for creative professionals",
+    color: "blue",
+    dividerColor: "green",
+    buttonColor: "green",
+    sectionInfo: {
+      duration: "Jan 2019 - Nov 2020",
+      description:
+        "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
+      tech: ["gatsby", "styled-components", "contentful", "bulma", "graphql", "netlify", "react"],
+    },
+    cards: [
+      {
+
+      },
+      {
+        title: "Lisna Music",
+        description:
+          "Small landing page project for musician Lisna created using React",
+        // image: lisnaImage,
+        demoUrl: "https://www.lisna.co.uk",
+        repoUrl: "https://github.com/erasebegin/lisna-music",
+      }
+    ],
+  },
+  {
+    title: "Personal",
+    subtitle:
+      "Created portfolios, landing pages and ecommerce platforms for creative professionals",
+    color: "yellow",
+    dividerColor: "blue",
+    buttonColor: "green",
+    sectionInfo: {
+      duration: "Jan 2019 - Nov 2020",
+      description:
+        "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
+      tech: ["gatsby", "styled-components", "contentful", "bulma", "graphql", "netlify", "react"],
+    },
     cards: [
       {
         title: "Github User Search",

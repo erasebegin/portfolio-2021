@@ -122,6 +122,10 @@ const SectionInfoBody = styled.div`
     max-width: 600px;
     padding-bottom: 1rem;
   }
+
+  h4 {
+    font-weight: bold;
+  }
 `;
 
 const TechIcons = styled.div`
@@ -143,13 +147,13 @@ const BorderButton = styled(Button)`
     background: ${(props) => props.background};
     border: none;
     color: ${(props) => props.theme.colors.blackGreen};
-    opacity: 0.8;
+    filter: saturate(1.5);
+    transition: filter 200ms ease-in-out;
   }
 
   &:focus {
     background: ${(props) => props.background};
     border: none;
-    opacity: 0.8;
     color: ${(props) => props.theme.colors.blackGreen};
   }
 

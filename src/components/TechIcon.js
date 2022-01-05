@@ -48,6 +48,7 @@ const IconContainer = styled.div`
     background: black;
     color: white;
     padding: 0.5rem;
+    padding-bottom: 0.5rem;
     border-radius: 0.5rem;
     transition: opacity 200ms;
     white-space: nowrap;
