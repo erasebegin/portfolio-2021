@@ -201,7 +201,7 @@ const data = [
     sectionInfo: {
       duration: "Jan 2019 - Forever",
       description:
-        "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
+        "Putting the fun in function, these are the projects that have kept me busy in my downtime",
       tech: [
         "node",
         "styled-components",
