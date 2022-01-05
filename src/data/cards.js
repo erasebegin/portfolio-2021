@@ -158,15 +158,27 @@ const data = [
     },
     cards: [
       {
-
+        title: "Soulstamina",
+        description: "Ecommerce platform created for designer and artist Soulstamina using Gatsby, Contentful, Bulma and a healthy dose of custom styling",
+        image: './images/soulstamina.png',
+        demoUrl: "https://soulstamina-shop.netlify.app/",
+        repoUrl: "https://github.com/erasebegin/soulstamina-shop"
       },
       {
         title: "Lisna Music",
         description:
           "Small landing page project for musician Lisna created using React",
-        // image: lisnaImage,
+        image: './images/lisna.png',
         demoUrl: "https://www.lisna.co.uk",
         repoUrl: "https://github.com/erasebegin/lisna-music",
+      },
+      {
+        title: "Otherworld",
+        description:
+          "Blog, news and ecommerce platform for illustrator Otherworld Nomad to tie in with his graphic novel launch",
+        image: './images/screenshot-otherworld.png',
+        demoUrl: "https://www.otherworldink.com",
+        repoUrl: "https://github.com/erasebegin/otherworld-ink",
       }
     ],
   },
@@ -215,14 +227,6 @@ const data = [
         // image: weatherImage,
         demoUrl: "https://quick-weather-search.herokuapp.com/",
         repoUrl: "https://github.com/erasebegin/weather-search",
-      },
-      {
-        title: "Lisna Music",
-        description:
-          "Small landing page project for musician Lisna created using React",
-        // image: lisnaImage,
-        demoUrl: "https://www.lisna.co.uk",
-        repoUrl: "https://github.com/erasebegin/lisna-music",
       },
       {
         title: "Necessary Products",
