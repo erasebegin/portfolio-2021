@@ -34,24 +34,26 @@ export default function Section({ sectionData }) {
           <Col>
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
-            <SectionInfo>
-              <SectionInfoBody showInfo={showInfo}>
-                <h4>{sectionInfo?.duration}</h4>
-                <p>{sectionInfo?.description}</p>
-                <TechIcons>
-                  {sectionInfo?.tech.map((type) => {
-                    return <TechIcon type={type} key={type} />;
-                  })}
-                </TechIcons>
-              </SectionInfoBody>
-              <BorderButton
-                background={colors[buttonColor]}
-                onClick={() => setShowInfo(!showInfo)}
-                showInfo={showInfo}
-              >
-                More info <IoMdArrowDropright size="1.5rem"/>
-              </BorderButton>
-            </SectionInfo>
+            {sectionInfo && (
+              <SectionInfo>
+                <SectionInfoBody showInfo={showInfo}>
+                  <h4>{sectionInfo?.duration}</h4>
+                  <p>{sectionInfo?.description}</p>
+                  <TechIcons>
+                    {sectionInfo?.tech.map((type) => {
+                      return <TechIcon type={type} key={type} />;
+                    })}
+                  </TechIcons>
+                </SectionInfoBody>
+                <BorderButton
+                  background={colors[buttonColor]}
+                  onClick={() => setShowInfo(!showInfo)}
+                  showInfo={showInfo}
+                >
+                  More info <IoMdArrowDropright size="1.5rem" />
+                </BorderButton>
+              </SectionInfo>
+            )}
           </Col>
         </Row>
         <Row>

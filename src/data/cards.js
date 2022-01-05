@@ -194,7 +194,7 @@ const data = [
   {
     title: "Personal",
     subtitle:
-      "Created portfolios, landing pages and ecommerce platforms for creative professionals",
+      "All sorts of bits and bobs created for fun and learning",
     color: "yellow",
     dividerColor: "blue",
     buttonColor: "green",
@@ -213,6 +213,15 @@ const data = [
       ],
     },
     cards: [
+      {
+        title: "URL Shortener",
+        description:
+          "A small project to get comfortable with the Firebase/Firestore API",
+        image:
+          "https://camo.githubusercontent.com/ff941841c0c04cd536ce9f83910310885cb33f95f01377c243c676a1a1cb3d6b/68747470733a2f2f692e6962622e636f2f67333538445a372f696d6167652e706e67",
+        demoUrl: "https://firebase-url-shortener.netlify.app/",
+        repoUrl: "https://github.com/erasebegin/url-shortener/",
+      },
       {
         title: "Github User Search",
         description:
