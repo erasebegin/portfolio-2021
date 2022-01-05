@@ -154,21 +154,30 @@ const data = [
       duration: "Jan 2019 - Nov 2020",
       description:
         "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
-      tech: ["gatsby", "styled-components", "contentful", "bulma", "graphql", "netlify", "react"],
+      tech: [
+        "gatsby",
+        "styled-components",
+        "contentful",
+        "bulma",
+        "graphql",
+        "netlify",
+        "react",
+      ],
     },
     cards: [
       {
         title: "Soulstamina",
-        description: "Ecommerce platform created for designer and artist Soulstamina using Gatsby, Contentful, Bulma and a healthy dose of custom styling",
-        image: './images/soulstamina.png',
+        description:
+          "Ecommerce platform created for designer and artist Soulstamina using Gatsby, Contentful, Bulma and a healthy dose of custom styling",
+        image: "./images/soulstamina.png",
         demoUrl: "https://soulstamina-shop.netlify.app/",
-        repoUrl: "https://github.com/erasebegin/soulstamina-shop"
+        repoUrl: "https://github.com/erasebegin/soulstamina-shop",
       },
       {
         title: "Lisna Music",
         description:
           "Small landing page project for musician Lisna created using React",
-        image: './images/lisna.png',
+        image: "./images/lisna.png",
         demoUrl: "https://www.lisna.co.uk",
         repoUrl: "https://github.com/erasebegin/lisna-music",
       },
@@ -176,10 +185,10 @@ const data = [
         title: "Otherworld",
         description:
           "Blog, news and ecommerce platform for illustrator Otherworld Nomad to tie in with his graphic novel launch",
-        image: './images/screenshot-otherworld.png',
+        image: "./images/screenshot-otherworld.png",
         demoUrl: "https://www.otherworldink.com",
         repoUrl: "https://github.com/erasebegin/otherworld-ink",
-      }
+      },
     ],
   },
   {
@@ -193,14 +202,22 @@ const data = [
       duration: "Jan 2019 - Nov 2020",
       description:
         "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
-      tech: ["gatsby", "styled-components", "contentful", "bulma", "graphql", "netlify", "react"],
+      tech: [
+        "gatsby",
+        "styled-components",
+        "contentful",
+        "bulma",
+        "graphql",
+        "netlify",
+        "react",
+      ],
     },
     cards: [
       {
         title: "Github User Search",
         description:
           "Search utility to find information and repositories of Github users by name",
-        // image: githubSearch,
+        image: "./images/github-search.png",
         demoUrl: "https://git-user-searcher.netlify.app",
         repoUrl: "https://github.com/erasebegin/git-user-search",
       },
@@ -208,7 +225,7 @@ const data = [
         title: "Hacker News Front End",
         description:
           "A front end for the somewhat quirky Hacker News API showing the top 10 stories and a comment tree",
-        // image: hackerNews,
+        image: "./images/hacker-news-frontend.png",
         demoUrl: "https://hacker-news-frontend.netlify.app/",
         repoUrl: "https://github.com/erasebegin/hacker-news-frontend",
       },
@@ -216,7 +233,7 @@ const data = [
         title: "Scrabble Letters",
         description:
           "A small web app that acts as a virtual scrabble letter bag for use in online classrooms",
-        // image: scrabbleImage,
+        image: "./images/scrabble.png",
         demoUrl: "https://scrabble-letters.netlify.app",
         repoUrl: "https://github.com/erasebegin/scrabble-letters",
       },
@@ -224,7 +241,7 @@ const data = [
         title: "Weather Search",
         description:
           "Node Express weather API with a Handlebars front-end. Icons are all made by me ^_^",
-        // image: weatherImage,
+        image: "./images/weather.png",
         demoUrl: "https://quick-weather-search.herokuapp.com/",
         repoUrl: "https://github.com/erasebegin/weather-search",
       },
@@ -232,7 +249,7 @@ const data = [
         title: "Necessary Products",
         description:
           "A spoof product page created as one of my first explorations in to front-end development",
-        // image: necessaryImage,
+        image: "./images/necessary.png",
         demoUrl: "https://erasebegin.github.io/necessary-products",
         repoUrl: "https://github.com/erasebegin/necessary-products",
       },
@@ -240,7 +257,7 @@ const data = [
         title: "Jotter",
         description:
           "A kind of PWA created in order to experiment with the localStorage browser functionality",
-        // image: jotter,
+        image: "./images/jotter.png",
         demoUrl: "https://my-jotter.netlify.app/",
         repoUrl: "https://github.com/erasebegin/jotter",
       },
@@ -248,7 +265,7 @@ const data = [
         title: "Tyrex Unsurance",
         description:
           "Practicing CSS styling, specifically CSS grid by creating a spoof business page",
-        // image: tyrexImage,
+        image: "./images/tyrex.png",
         demoUrl: "https://erasebegin.github.io/tyrex-unsurance",
         repoUrl: "https://github.com/erasebegin/tyrex-unsurance",
       },
@@ -256,9 +273,9 @@ const data = [
   },
   {
     title: "Illustration",
-    color: "yellow",
-    dividerColor: "orangeLight",
-    buttonColor: "orangeDark",
+    color: "green",
+    dividerColor: "yellow",
+    buttonColor: "yellow",
     columns: 4,
     externalUrl: "https://www.thinkdrops.art/",
     cards: [
@@ -267,20 +284,20 @@ const data = [
         description:
           "Illustrations for a tutorial for Juxt's bitemporal database formerly known as Crux",
         demoUrl: "https://www.thinkdrops.art/blog/crux-tutorial/",
-        // image: crux
+        image: "./images/crux.png",
       },
       {
         title: "Penguin School Projects",
         description:
           "Earliest projects whilst studying at the Penguin Illustration School",
         demoUrl: "https://www.thinkdrops.art/blog/alien-sushi",
-        // image: christmas
+        image: "./images/christmas.png",
       },
       {
         title: "Boris",
         description: "Cover artwork for Lisna track",
         demoUrl: "https://www.thinkdrops.art/blog/boris",
-        // image: boris
+        image: "./images/boris.png",
       },
     ],
   },

@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <ContactContainer>
       <Element name="contact">
-        <Divider color={colors.yellow} />
+        <Divider color={colors.green} />
         <Container>
           <Form action="https://formspree.io/f/meqpkeej" method="POST">
             <h2>Contact</h2>
