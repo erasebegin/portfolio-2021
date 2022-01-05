@@ -199,15 +199,15 @@ const data = [
     dividerColor: "blue",
     buttonColor: "green",
     sectionInfo: {
-      duration: "Jan 2019 - Nov 2020",
+      duration: "Jan 2019 - Forever",
       description:
         "Initially taking on small contracts on Upwork I managed to gain clients through word of mouth and ended up mostly working for creatives such as musicians, illustrators and artists",
       tech: [
-        "gatsby",
+        "node",
         "styled-components",
-        "contentful",
-        "bulma",
-        "graphql",
+        "mongo-db",
+        "bootstrap",
+        "sass",
         "netlify",
         "react",
       ],
