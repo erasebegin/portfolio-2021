@@ -193,15 +193,14 @@ const data = [
   },
   {
     title: "Personal",
-    subtitle:
-      "All sorts of bits and bobs created for fun and learning",
+    subtitle: "All sorts of bits and bobs created for fun and learning",
     color: "yellow",
     dividerColor: "blue",
     buttonColor: "green",
     sectionInfo: {
       duration: "Jan 2019 - Forever",
       description:
-        "Putting the fun in function, these are the projects that have kept me busy in my downtime",
+        "Putting the fun in function, these are the projects that have kept me busy in my downtime. I've dabbled with various technologies, but always kept my focus around React",
       tech: [
         "node",
         "styled-components",

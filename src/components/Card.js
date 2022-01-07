@@ -63,4 +63,12 @@ const StyledButton = styled(Button)`
     filter: saturate(1.5);
     color: black !important;
   }
+
+  &:focus,
+  &:active {
+    outline: none !important;
+    background: ${(props) => props.$buttonColor};
+    color: black !important;
+    box-shadow: none;
+  }
 `;
