@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import './styles/globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import { ThemeProvider } from 'styled-components';
 import variables from './styles/variables';
